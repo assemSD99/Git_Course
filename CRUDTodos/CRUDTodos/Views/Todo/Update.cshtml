@@ -1,0 +1,28 @@
+﻿@model TODO
+<form method="post" action="/Todo/Update">
+    <div class="form-group">
+        <label asp-for="Libelle"></label>
+        <input asp-for="Libelle" class="form-control" />
+        <span class="text-danger" asp-validation-for="Libelle"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="State"></label>
+        <input asp-for="State" type="radio" value="@State.TODO" />TODO
+        <input asp-for="State" type="radio" value="@State.DOING" />DOING
+        <input asp-for="State" type="radio" value="@State.DONE" />DONE
+        <span class="text-danger" asp-validation-for="State"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateLimite"></label>
+        <input asp-for="DateLimite" class="form-control" />
+        <span class="text-danger" asp-validation-for="DateLimite"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Modifier" class="btn btn-primary" />
+    </div>
+</form>
